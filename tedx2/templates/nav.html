@@ -1,0 +1,105 @@
+
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+  <div class="container">
+
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="{{ url_for('public.home') }}">
+        <img alt="TEDXperiments" src="{{ url_for('static', filename='img/tedxperiments_logo.png') }}">
+    </a>
+  </div>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li><a href="{{ url_for('experimentos.home') }}">Experimentos</a></li>
+      <li><a href="{{ url_for('public.resultados') }}">Resultados</a></li>
+      <li><a href="{{ url_for('public.about') }}">Quienes Somos</a></li>
+    </ul>
+    {% if current_user and current_user.is_authenticated() %}
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <p class="navbar-text"><a class="navbar-link" href="{{ url_for('user.members') }}">Logged in as {{ current_user.username }}</a></p>
+        </li>
+        <li><a class="navbar-link" href="{{ url_for('public.logout') }}"><i class="fa fa-sign-out"></i></a></li>
+
+    </ul>
+    {% elif form %}
+    <ul class="nav navbar-nav navbar-right">
+
+      <li>
+        <a href="#" data-toggle="modal" data-target="#myModal">
+          Acceder
+        </a>
+      </li>
+    </ul>
+<!--     <form id="loginForm" method="POST" class="navbar-form form-inline navbar-right" action="/" role="login">
+      {{ form.hidden_tag() }}
+      <div class="form-group">
+        {{ form.username(placeholder="Username", class_="form-control") }}
+        {{ form.password(placeholder="Password", class_="form-control") }}
+      </div>
+      <button type="submit" class="btn btn-default">Log in</button>
+    </form> -->
+    {% endif %}
+  </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>
+
+
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="myModalLabel">Acceder</h4>
+      </div> <!-- /.modal-header -->
+
+      <div class="modal-body">
+        <form role="form">
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" class="form-control" id="uLogin" placeholder="Login">
+              <label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>
+            </div>
+          </div> <!-- /.form-group -->
+
+          <div class="form-group">
+            <div class="input-group">
+              <input type="password" class="form-control" id="uPassword" placeholder="Password">
+              <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
+            </div> <!-- /.input-group -->
+          </div> <!-- /.form-group -->
+
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> Recordarme
+            </label>
+          </div> <!-- /.checkbox -->
+        </form>
+
+      </div> <!-- /.modal-body -->
+      <a href="{{ url_for('public.register') }}">Create account</a>
+      <div class="modal-footer">
+        <button class="form-control btn btn-primary">Ok</button>
+
+        <div class="progress">
+          <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="100" style="width: 0%;">
+            <span class="sr-only">progress</span>
+          </div>
+        </div>
+      </div> <!-- /.modal-footer -->
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+

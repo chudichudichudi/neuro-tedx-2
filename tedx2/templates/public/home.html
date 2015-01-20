@@ -1,0 +1,54 @@
+
+{% extends "layout.html" %}
+{% block content %}
+<!-- Main jumbotron for a primary marketing message or call to action -->
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>¡Participá de experimentos online!</h1>
+        <p>¿Tenes ganas de ayudar a la ciencia y ser participe de experimentos de los cuales vas a entender los resultados?.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Metacognición</h2>
+          <img src="{{ url_for('static', filename='img/moravec.png') }}" alt="moravec" class="img-circle">
+          <p>¿Queres saber que tanto sabes de vos mismo? Hace este experimento y fijate mediante una simple apuesta a cual es el circulo mas grande, cuantos puntos logras obtener. Tiempo aproximado 5 minutos de experimento.</p>
+          <p><a class="btn btn-default" href="#" role="button">Participar&raquo;</a></p>
+        </div>
+        <div class="col-md-6">
+          <h2>Cronotipos</h2>
+          <img src="{{ url_for('static', filename='img/moravec.png') }}" alt="moravec" class="img-circle">
+          <p>Vivis de noche y la gente no entiende que te cuesta dormir temprano. Te levantas temprano no importa que y le tiras bronca a la gente que duerme hasta tarde diciendole vago. Fijate si sos madrugador o sos buho mediante un cuestionario de 5 minutos! </p>
+          <p><a class="btn btn-default" href="#" role="button">Participar&raquo;</a></p>
+       </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Algun Gameflow cognitivo</h2>
+          <img src="{{ url_for('static', filename='img/moravec.png') }}" alt="moravec" class="img-circle">
+          <p>Juga a una serie de juegos que te evaluen muchas cosas de la cognicion humana.</p>
+          <p><a class="btn btn-default" href="#" role="button">Participar&raquo;</a></p>
+        </div>
+        <div class="col-md-6">
+          <h2>Moravec</h2>
+          <img src="{{ url_for('static', filename='img/moravec.png') }}" alt="moravec" class="img-circle">
+          <p>¿Nunca te preguntaste como el verdulero hace las cuentas rápido cuando le pedís un millon de cosas? Nosotros tampoco, pero si nos preguntamos si existe alguna forma de entrenar para poder hacer cuentas más rápidas. Desarrollamos una aplicación en android que te entrena para eso!</p>
+          <p><a class="btn btn-default" href="#" role="button">Bajar!&raquo;</a></p>
+       </div>
+      </div>
+
+
+    </div> <!-- /container -->        
+
+
+
+
+{% endblock %}
+
